@@ -8,7 +8,7 @@
 		border-radius: 10rem;
 		transition: all 0.2s;
 		position: relative;
-		font-size: 1.6rem;
+		font-size: $default-font-size;
 	}
 
 	&--animated {
@@ -51,5 +51,30 @@
 		left: 0;
 		transition: all 0.4s;
 		z-index: -1;
+	}
+}
+
+.btn-text {
+	&:link,
+	&:visited {
+		font-size: $default-font-size;
+		text-decoration: none;
+		display: inline-block;
+		color: $color-primary;
+		border-bottom: 0.1rem solid $color-primary;
+		padding: 0.3rem 0.7rem;
+		transition: all 0.4s;
+	}
+
+	&:hover {
+		background-color: $color-primary;
+		color: $color-white;
+		transform: translateY(-2px);
+		box-shadow: 0 1rem 2rem rgba($color-dark, 0.2);
+	}
+
+	&:active {
+		transform: translateY(0);
+		box-shadow: 0 0.5rem 1rem rgba($color-dark, 0.2);
 	}
 }
