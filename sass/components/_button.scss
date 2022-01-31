@@ -40,6 +40,20 @@
 		}
 	}
 
+	&--green {
+		background-color: $color-primary;
+		color: $color-white;
+
+		&::after {
+			background-color: $color-primary;
+		}
+
+		&:hover::after {
+			transform: scale(1.5);
+			opacity: 0;
+		}
+	}
+
 	&::after {
 		content: '';
 		display: inline-block;
