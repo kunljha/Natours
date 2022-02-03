@@ -18,17 +18,22 @@
 
 		&:focus {
 			outline: none;
-			box-shadow: 0 1rem 2rem rgba($color-dark, 0.2);
 			border-bottom: 3px solid $color-primary;
 		}
 
+		// styles to apply when input-element => value is invalid
 		&:focus:invalid {
 			border-bottom: 3px solid $color-secondary-dark;
 		}
 
+		// we can style placeholder of input-element with ::-webkit-input-placeholder
 		&::-webkit-input-placeholder {
 			color: $color-dark-grey-2;
 		}
+
+		// &:focus::-webkit-input-placeholder {
+		// 	visibility: hidden;
+		// }
 	}
 
 	&__label {
@@ -40,12 +45,18 @@
 		transition: all 0.2s;
 	}
 
-	//  sibling selector "~"
+	// sibling selector "~"
 	&__input:placeholder-shown ~ &__label {
 		opacity: 0;
 		transform: translateY(-4rem);
 	}
 
+	// &__input:focus ~ &__label {
+	// 	opacity: 1;
+	// 	transform: translateY(-9rem);
+	// }
+
+	// styling radio-buttons
 	&__radio-group {
 		width: 49%;
 		display: inline-block;
@@ -67,7 +78,7 @@
 		height: 3rem;
 		width: 3rem;
 		border: 0.5rem solid $color-primary;
-		border-radius: 50%;
+		border-radius: 50%; // to make circular
 		display: inline-block;
 		position: absolute;
 		top: -0.4rem;
@@ -89,7 +100,7 @@
 		}
 	}
 
-	&__radio-input:checked ~ &__radio-label &__radio-button::after {
+	&__radio-input:checked ~ &__radio-label > &__radio-button::after {
 		opacity: 1;
 	}
 }
